@@ -152,3 +152,59 @@ function findLongestWord(str){
     },"")
 }
 console.log(findLongestWord("Ayan is a      gooooood boooooooooooy"));
+
+//10)-----------------------------------------------------------------------
+//Generate hashtag
+//You are required to implement a function generateHash that generates a hash tag from given input string. The hash tag should be constructed as follows : 
+
+//The input string should be converted to a hash tag format , where each word is capitalized and concatenated together without spaces. 
+//if the length of input string is greater than 280 character or if the input string is empty orcontains only whitespaces the function should return false 
+//Otherwise the function should return the generated hash tag prefixed with #
+
+
+function generateHash(str){
+    if(str.length > 280 || str.trim().length === 0){
+        return false ;    
+    }
+
+    str = str.trim().split(" ");   //foreach me value return nhi kr skte 
+    str = str.map((curElem) => 
+        curElem.replace(curElem[0], curElem[0].toUpperCase() ) 
+    );
+    str=`#${str.join("")}`; 
+
+
+    return str ;
+    
+}
+console.log(generateHash("my name is ayan Singh "));
+
+
+function generateHash(str){
+    if(str.length > 280 || str.trim().length === 0){
+        return false ;    
+    }
+
+    str = str.trim().split(" ");   //foreach me value return nhi kr skte 
+    str = str.map((curElem) => 
+        // curElem.replace(curElem[0], curElem[0].toUpperCase() ) 
+        curElem.charAt(0).toUpperCase() + curElem.slice(1)
+    );
+    str=`#${str.join("")}`;
+
+
+    return str ;
+    
+}
+console.log(generateHash("my name is ayan Singh")) ; 
+
+//11)---------------------------------------------------------------------------------------------------------------------------------------
+//Write a function that takes number as a input and returns the sum of its digit - input must be positive - 
+function summation(num){
+    if(num<0){
+        return "Invalid Input"
+    }
+    let arr = Array.from(String(num),Number)
+    return arr.reduce((accum,curVal)=> accum += curVal);
+}
+console.log(summation(125345));
