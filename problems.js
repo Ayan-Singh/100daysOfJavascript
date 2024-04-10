@@ -207,4 +207,14 @@ function summation(num){
     let arr = Array.from(String(num),Number)
     return arr.reduce((accum,curVal)=> accum += curVal);
 }
-console.log(summation(125345));
+console.log(summation(125345)); 
+
+//------------------------------------------------------------------------------------------------------------------------------
+//Write a function that takes array as a input and removes any duplicates returning new array with only unique elements .
+//may contain both positive and negative , may be empty , output array should retain the original order 
+
+function removeDuplicates(arr){
+    let newArr = [...new Set(arr)]
+    return newArr ;
+}
+console.log(removeDuplicates([1,2,3,4,5,6,7,8,9,34,5,6,7,4,4,4]))
