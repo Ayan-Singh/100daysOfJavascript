@@ -209,7 +209,7 @@ function summation(num){
 }
 console.log(summation(125345)); 
 
-//------------------------------------------------------------------------------------------------------------------------------
+//12)------------------------------------------------------------------------------------------------------------------------------
 //Write a function that takes array as a input and removes any duplicates returning new array with only unique elements .
 //may contain both positive and negative , may be empty , output array should retain the original order 
 
@@ -218,3 +218,42 @@ function removeDuplicates(arr){
     return newArr ;
 }
 console.log(removeDuplicates([1,2,3,4,5,6,7,8,9,34,5,6,7,4,4,4]))
+
+//13)-----------------------------------------------------------------------------------------------------------------------------
+//Write a function that takes a string as input and returns the count of vowels in the string . 
+
+function countVowel(str){
+    vowels=["a","e","i","o","u"];
+    str = str.trim().toLowerCase().split("");
+    let count = str.reduce((accum,currVal) =>{
+        if(vowels.includes(currVal)){
+            accum++
+        }
+        return accum
+    },0)  
+     return count 
+
+}
+console.log(countVowel("Ayan is a great man"))
+
+//14)-------------------------------------------------------------------------
+//Write a function to calculate the sum of squares of all elements in an array . 
+
+function sum(arr){
+    return arr.reduce((accum,curVal) =>accum+=curVal*curVal,0)
+}
+console.log(sum([1,2,3,4,5]))
+
+//15)-------------------------------------------------------------------------
+//Write a function that takes an array of number as a input and return the minimum value found in the array 
+
+function minNumnber(arr){
+  return arr.reduce((accum,curVal)=>{
+    if(curVal<accum){
+        accum = curVal;
+        
+    }
+    return accum;
+   },arr[0])
+}
+console.log(minNumnber([2,4,4,6,-78,-9,-10]))
